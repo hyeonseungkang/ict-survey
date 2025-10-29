@@ -73,8 +73,8 @@
             // await writable.write(blob)
             // await writable.close()
             autoDownloadBlob(
-                    blob,
-                    `${randomId}-${responseType}-${startDate}-${endDate}.mp4`,
+                blob,
+                `${randomId}-${responseType}-${startDate}-${endDate}.mp4`,
             );
             // videoElement.srcObject = null;
             stream.getTracks().forEach((t) => t.stop());
@@ -85,8 +85,8 @@
                 logElement.textContent += `startDate=${startDate}&`;
                 recoder.start(1000);
                 document
-                        .querySelector('div.logged')
-                        .setAttribute('style', 'display: none;');
+                    .querySelector('div.logged')
+                    .setAttribute('style', 'display: none;');
                 document.querySelector('div.main').setAttribute('style', '');
             } else {
                 window.location.reload();
@@ -100,11 +100,11 @@
                 logElement.textContent += `responseType=${responseType}&`;
                 document.querySelector('div.logged').setAttribute('style', '');
                 document
-                        .querySelector('div.main')
-                        .setAttribute('style', 'display: none;');
+                    .querySelector('div.main')
+                    .setAttribute('style', 'display: none;');
                 endDate = Date.now();
                 document.querySelector('span#survey-message').textContent =
-                        '설문을 기록함. 설문ID';
+                    '설문을 기록함. 설문ID';
                 recoder.stop();
             });
         });
