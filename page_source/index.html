@@ -2,6 +2,10 @@
 <head>
     <title>survey 본문</title>
     <style>
+        body {
+            font-family: "Apple SD Gothic Neo", sans-serif;
+        }
+
         .main {
             text-align: center;
         }
@@ -10,9 +14,13 @@
             border: none;
             width: 80vw;
         }
-
-        button {
-            height: 80vh;
+        #survey-id button {
+            width: 80vw;
+            height: 4em;
+            font-size: 2em;
+        }
+        button.response-btn {
+            height: 70vh;
             width: 40vw;
             font-size: 6em;
         }
@@ -20,11 +28,30 @@
 </head>
 <body>
 <div class="logged">
-    <h1><span id="survey-message">설문을 시작함. 설문ID</span> : <span id="survey-id"></span></h1>
+    <h1>
+        <span id="survey-message">
+            실험에 참여해주셔서 감사합니다. 아래의 버튼을 누르시어 실험에 참가할 수 있습니다. <br>
+            Thank you for participate the survey. By click button below, you can join survey.
+        </span><br>
+    </h1>
+    <span id="survey-id">
+            <button>
+                나는 실험 전에 동의서의 내용을 이해하였으며, 모든 내용을 동의함. <br>
+                I understand the contents of the Consent form, and fully agree with the contents.
+            </button>
+    </span>
 </div>
 <div class="main" style="display: none;">
-    <button class="response-btn" id="respA">디자인 A안</button>
-    <button class="response-btn" id="respB">디자인 B안</button>
+    <h1>Q 101. 두 디자인 시안을 충분히 확인하시고, 선호하는 디자인 시안을 선택하십시오.</h1>
+    <h1>Q 101. Please check the two design plans thoroughly and choose the design plan you prefer.</h1>
+    <button class="response-btn" id="respA">
+        디자인 A안<br>
+        Design A.
+    </button>
+    <button class="response-btn" id="respB">
+        디자인 B안<br>
+        Design B.
+    </button>
 </div>
 <br><br>
 <textarea class="log" rows="7"></textarea>
@@ -39,7 +66,6 @@
     let endDate = Date.now();
 
     const randomIdElement = document.querySelector('span#survey-id');
-    randomIdElement.textContent = randomId;
     const logElement = document.querySelector('textarea.log');
 
     const autoDownloadBlob = (blob, filename) => {
@@ -94,6 +120,7 @@
         });
         document.querySelectorAll('button.response-btn').forEach((element) => {
             element.addEventListener('click', () => {
+                randomIdElement.textContent = randomId;
                 responseType = element.id;
                 responsed = true;
                 logElement.textContent += `endDate=${endDate}&`;
@@ -104,7 +131,7 @@
                     .setAttribute('style', 'display: none;');
                 endDate = Date.now();
                 document.querySelector('span#survey-message').textContent =
-                    '설문을 기록함. 설문ID';
+                    '설문을 기록하였습니다. 페이지를 조작하지 마시고 설문이 끝났음을 연구자에게 알려주십시오. Your response had been saved. Do not modify device, inform to researcher your survey ended.';
                 recoder.stop();
             });
         });
