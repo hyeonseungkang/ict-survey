@@ -10,19 +10,23 @@
             text-align: center;
         }
 
+        .main h1 {
+            font-size: 1.8em;
+        }
+
         .log {
             border: none;
             width: 80vw;
         }
         #survey-id button {
             width: 80vw;
-            height: 4em;
-            font-size: 2em;
+            height: 6em;
+            font-size: 1.8em;
         }
         button.response-btn {
             height: 70vh;
             width: 46vw;
-            font-size: 4em;
+            font-size: 3em;
         }
     </style>
 </head>
@@ -54,7 +58,7 @@
     </button>
 </div>
 <br><br>
-<textarea class="log" rows="7"></textarea>
+<textarea readonly class="log" rows="7"></textarea>
 
 <script>
     const randomId = String(self.crypto.randomUUID()).split('-').pop();
