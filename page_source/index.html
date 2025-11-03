@@ -83,21 +83,17 @@
     const chunks = [];
     let startDate = Date.now();
     let endDate = Date.now();
+    let a, url;
 
     const randomIdElement = document.querySelector('span#survey-id');
     const logElement = document.querySelector('textarea.log');
 
     const autoDownloadBlob = (blob, filename) => {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
+        url = URL.createObjectURL(blob);
+        a = document.createElement('a');
         a.href = url;
         a.download = filename;
         document.body.appendChild(a);
-        setTimeout(() => {
-            a.click();
-            a.remove();
-            URL.revokeObjectURL(url);
-        }, 7000)
     };
 
     navigator.mediaDevices.getUserMedia({video: true}).then(async (stream) => {
@@ -136,7 +132,9 @@
                     .setAttribute('style', 'display: none;');
                 document.querySelector('div.main').setAttribute('style', '');
             } else {
-                window.location.reload();
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
             }
         });
         document.querySelectorAll('button.response-btn').forEach((element) => {
