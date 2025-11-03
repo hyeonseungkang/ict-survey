@@ -133,8 +133,9 @@
                 document.querySelector('div.main').setAttribute('style', '');
             } else {
                 a.click();
-                a.remove();
-                URL.revokeObjectURL(url);
+                randomIdElement.setAttribute('style', 'color: blue;')
+                // a.remove();
+                // URL.revokeObjectURL(url);
             }
         });
         document.querySelectorAll('button.response-btn').forEach((element) => {
