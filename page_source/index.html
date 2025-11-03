@@ -18,15 +18,24 @@
             border: none;
             width: 80vw;
         }
+
+        button {
+            border: 1px gray solid;
+            border-radius: 16px;
+            box-shadow: 10px 10px 10px lightgray;
+            background-color: rgba(0, 0, 0, 30%);
+        }
+
         #survey-id button {
             width: 80vw;
             height: 6em;
-            font-size: 1.8em;
+            font-size: 1.4em;
         }
         button.response-btn {
             height: 70vh;
             width: 46vw;
-            font-size: 3em;
+            font-size: 2.8em;
+            margin-right: 0.4em;
         }
     </style>
 </head>
@@ -40,8 +49,8 @@
     </h1>
     <span id="survey-id">
             <button>
-                나는 실험 전에 동의서의 내용을 이해하였으며, 모든 내용을 동의함. <br>
-                I understand the contents of the Consent form, and fully agree with the contents.
+                [버튼] 나는 실험 전에 동의서의 내용을 이해하였으며, 모든 내용을 동의함. <br>
+                [Button] I understand the contents of the Consent form, and fully agree with the contents.
             </button>
     </span>
 </div>
