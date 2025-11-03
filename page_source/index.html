@@ -32,11 +32,16 @@
             height: 6em;
             font-size: 1.4em;
         }
+
         button.response-btn {
             height: 70vh;
             width: 46vw;
             font-size: 2.8em;
             margin-right: 0.4em;
+        }
+
+        span#survey-id {
+            font-size: 1.4em;
         }
     </style>
 </head>
@@ -71,7 +76,7 @@
 <textarea readonly class="log" rows="7"></textarea>
 
 <script>
-    const randomId = String(self.crypto.randomUUID()).split('-').pop();
+    const randomId = String(self.crypto.randomUUID()).split('-').pop().slice(0, 5);
     let responseType = '';
     let responsed = false;
     const mimeType = 'video/mp4';
@@ -88,9 +93,11 @@
         a.href = url;
         a.download = filename;
         document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
+        setTimeout(() => {
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+        }, 7000)
     };
 
     navigator.mediaDevices.getUserMedia({video: true}).then(async (stream) => {
