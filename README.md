@@ -14,23 +14,23 @@
 
 ## 시선 추적 실험 설계
 
-<img src="images/6.png" width="600">
+<img src="images/6.png" width="800">
 
-<img src="images/27.png" width="600">
+<img src="images/27.png" width="800">
 
-<img src="images/35.png" width="600">
+<img src="images/35.png" width="800">
 
 ## 시선 추적 실험 결과 분석
 
-<img src="images/7.png" width="600">
+<img src="images/7.png" width="800">
 
-<img src="images/10.png" width="600">
+<img src="images/10.png" width="800">
 
 ## 시선 추적 녹화 영상 분석 설계
 
-<img src="images/36.png" width="600">
+<img src="images/36.png" width="800">
 
-<img src="images/37.png" width="600">
+<img src="images/37.png" width="800">
 
 
 ## Appendix
